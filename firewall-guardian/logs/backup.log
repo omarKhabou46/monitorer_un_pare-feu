@@ -1,0 +1,9 @@
+{"timestamp": "2025-05-26T22:11:37.556846", "level": "INFO", "module": "BackupManager", "message": "Initialisation du BackupManager", "metadata": {}}
+{"timestamp": "2025-05-26T22:11:46.489841", "level": "INFO", "module": "BackupManager", "message": "Initialisation du BackupManager", "metadata": {}}
+{"timestamp": "2025-05-26T22:11:51.408916", "level": "INFO", "module": "BackupManager", "message": "Sauvegarde cr\u00e9\u00e9e: /home/boggyman0/Desktop/projet/firewall-guardian/backups/backup_20250526_221151.json", "metadata": {"size": "1.36 KB", "items": 5}}
+{"timestamp": "2025-05-26T22:15:29.438023", "level": "INFO", "module": "BackupManager", "message": "Initialisation du BackupManager", "metadata": {}}
+{"timestamp": "2025-05-26T22:15:29.577342", "level": "INFO", "module": "BackupManager", "message": "Sauvegarde cr\u00e9\u00e9e: /home/boggyman0/Desktop/projet/firewall-guardian/backups/backup_20250526_221529.json", "metadata": {"size": "1.45 KB", "items": 5}}
+{"timestamp": "2025-05-26T22:19:58.174153", "level": "INFO", "module": "BackupManager", "message": "Initialisation du BackupManager", "metadata": {}}
+{"timestamp": "2025-05-26T22:19:58.333653", "level": "INFO", "module": "BackupManager", "message": "Sauvegarde cr\u00e9\u00e9e: /home/boggyman0/Desktop/projet/firewall-guardian/backups/backup_20250526_221958.json", "metadata": {"size": "1.46 KB", "items": 5}}
+{"timestamp": "2025-05-26T22:20:14.602141", "level": "INFO", "module": "BackupManager", "message": "Initialisation du BackupManager", "metadata": {}}
+{"timestamp": "2025-05-26T22:20:14.734746", "level": "INFO", "module": "BackupManager", "message": "Sauvegarde cr\u00e9\u00e9e: /home/boggyman0/Desktop/projet/firewall-guardian/backups/backup_20250526_222014.json", "metadata": {"size": "1.46 KB", "items": 5}}

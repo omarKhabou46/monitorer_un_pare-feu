@@ -1,0 +1,7 @@
+{"timestamp": "2025-05-26T21:38:18.700501", "level": "INFO", "module": "FirewallMonitor", "message": "D\u00e9marrage du monitoring (Ctrl+C pour arr\u00eater)", "metadata": {}}
+{"timestamp": "2025-05-26T21:38:40.208100", "level": "WARNING", "module": "FirewallMonitor", "message": "Port suspect 21 (FTP) utilis\u00e9", "metadata": {"local": "127.0.0.1:21", "remote": "127.0.0.1:49520"}}
+{"timestamp": "2025-05-26T21:38:43.294308", "level": "WARNING", "module": "FirewallMonitor", "message": "Port suspect 21 (FTP) utilis\u00e9", "metadata": {"local": "127.0.0.1:21", "remote": "127.0.0.1:49520"}}
+{"timestamp": "2025-05-26T21:38:46.365899", "level": "WARNING", "module": "FirewallMonitor", "message": "Port suspect 21 (FTP) utilis\u00e9", "metadata": {"local": "127.0.0.1:21", "remote": "127.0.0.1:49520"}}
+{"timestamp": "2025-05-26T21:38:46.839944", "level": "INFO", "module": "FirewallMonitor", "message": "Arr\u00eat du monitoring", "metadata": {}}
+{"timestamp": "2025-05-26T22:13:21.564769", "level": "INFO", "module": "FirewallMonitor", "message": "D\u00e9marrage du monitoring (Ctrl+C pour arr\u00eater)", "metadata": {}}
+{"timestamp": "2025-05-26T22:13:23.287154", "level": "INFO", "module": "FirewallMonitor", "message": "Arr\u00eat du monitoring", "metadata": {}}
