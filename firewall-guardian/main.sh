@@ -1,30 +1,91 @@
 #!/bin/bash
-# Chargement des couleurs
-source lib/colors.sh
 
-# Menu interactif
+# Source modular scripts
+source scripts/tool_check.sh
+source scripts/log_utils.sh
+source scripts/error_handling.sh
+source scripts/menu.sh
+
+# Default log directory and fallback
+SYSTEM_LOG_DIR="/var/log/firewall-guardian"
+USER_LOG_DIR="${HOME}/.firewall-guardian/logs"
+LOG_DIR=""
+HISTORY_LOG=""
+USERNAME=$(whoami)
+
+# Try to use system log directory first, fall back to user directory if needed
+setup_log_directory() {
+    # Try system directory first
+    if mkdir -p "$SYSTEM_LOG_DIR" 2>/dev/null && touch "${SYSTEM_LOG_DIR}/history.log" 2>/dev/null; then
+        LOG_DIR="$SYSTEM_LOG_DIR"
+        HISTORY_LOG="${LOG_DIR}/history.log"
+        echo "Using system log directory: $LOG_DIR"
+    else
+        # Fall back to user directory
+        mkdir -p "$USER_LOG_DIR"
+        LOG_DIR="$USER_LOG_DIR"
+        HISTORY_LOG="${LOG_DIR}/history.log"
+        echo "Using user log directory: $LOG_DIR"
+    fi
+    
+    # Ensure log file exists and is writable
+    touch "$HISTORY_LOG" 2>/dev/null || { 
+        echo "Error: Cannot create or write to log file. Please check permissions."
+        exit 1
+    }
+}
+
+# Parse options
+ROLE=""
+FORK=false
+THREAD=false
+SUBSHELL=false
+ANALYSIS_DONE=false
+RULES_DONE=false
+while getopts "hftsl:ra" opt; do
+    case $opt in
+        h) show_help ;;
+        f) FORK=true ;;
+        t) THREAD=true ;;
+        s) SUBSHELL=true ;;
+        l) 
+            LOG_DIR="$OPTARG"
+            HISTORY_LOG="${LOG_DIR}/history.log"
+            mkdir -p "$LOG_DIR" || { echo "Error: Cannot create custom log directory"; exit 1; }
+            ;;
+        r) [ "$EUID" -ne 0 ] && handle_error 102 "Option -r requires admin privileges" || echo "Restoring defaults... (not implemented in this version)"; ;;
+        a) ANALYSIS_DONE=true ;;
+        ?) handle_error 100 "Invalid option" ;;
+    esac
+done
+shift $((OPTIND-1))
+
+# Check mandatory parameter
+[ -z "$1" ] && handle_error 101 "Role parameter is mandatory (e.g., web, db, ftp)"
+ROLE="$1"
+
+# Validate role
+case $ROLE in
+    web|db|ftp) ;;
+    *) handle_error 103 "Invalid role. Must be one of: web, db, ftp" ;;
+esac
+
+# Setup log directory
+setup_log_directory
+
+# Check and install tools before proceeding
+check_and_install_tools
+
+# Main loop
 while true; do
-  clear
-  echo -e "${BLUE}=== Firewall Guardian ==="
-  echo -e "${NC}"
-  echo -e "1. 🖥️  Surveillance temps réel"
-  echo -e "2. 🧠 Analyse IA de configuration"
-  echo -e "3. ⚙️  Générer règles de pare-feu"
-  echo -e "4. 💾 Sauvegarder configuration"
-  echo -e "5. 🔄 Restaurer configuration"
-  echo -e "6. 🚨 Voir alertes"
-  echo -e "7. ❌ Quitter"
-  echo -n "Choix [1-7] : "
-  read choice
-
-  case $choice in
-    1) python3 modules/monitor.py ;;
-    2) python3 modules/analyze_ia.py ;;
-    3) python3 modules/rules_generator.py ;;
-    4) python3 modules/backup_manager.py save ;;
-    5) pyhton3 modules/backup_manager.py restore ;;
-    6) less logs/alerts.log ;;
-    7) exit 0 ;;
-    *) echo -e "${RED}Choix invalide!${NC}"; sleep 1 ;;
-  esac
+    show_menu
+    read choice
+    case $choice in
+        6)  # Special handling for alerts viewing
+            execute_choice "$choice"
+            ;;
+        *)  # Normal logging for other commands
+            execute_choice "$choice" 2>&1 | tee -a "$HISTORY_LOG" > /dev/tty
+            ;;
+    esac
 done

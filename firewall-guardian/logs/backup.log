@@ -1,9 +1,16 @@
-{"timestamp": "2025-05-26T22:11:37.556846", "level": "INFO", "module": "BackupManager", "message": "Initialisation du BackupManager", "metadata": {}}
-{"timestamp": "2025-05-26T22:11:46.489841", "level": "INFO", "module": "BackupManager", "message": "Initialisation du BackupManager", "metadata": {}}
-{"timestamp": "2025-05-26T22:11:51.408916", "level": "INFO", "module": "BackupManager", "message": "Sauvegarde cr\u00e9\u00e9e: /home/boggyman0/Desktop/projet/firewall-guardian/backups/backup_20250526_221151.json", "metadata": {"size": "1.36 KB", "items": 5}}
-{"timestamp": "2025-05-26T22:15:29.438023", "level": "INFO", "module": "BackupManager", "message": "Initialisation du BackupManager", "metadata": {}}
-{"timestamp": "2025-05-26T22:15:29.577342", "level": "INFO", "module": "BackupManager", "message": "Sauvegarde cr\u00e9\u00e9e: /home/boggyman0/Desktop/projet/firewall-guardian/backups/backup_20250526_221529.json", "metadata": {"size": "1.45 KB", "items": 5}}
-{"timestamp": "2025-05-26T22:19:58.174153", "level": "INFO", "module": "BackupManager", "message": "Initialisation du BackupManager", "metadata": {}}
-{"timestamp": "2025-05-26T22:19:58.333653", "level": "INFO", "module": "BackupManager", "message": "Sauvegarde cr\u00e9\u00e9e: /home/boggyman0/Desktop/projet/firewall-guardian/backups/backup_20250526_221958.json", "metadata": {"size": "1.46 KB", "items": 5}}
-{"timestamp": "2025-05-26T22:20:14.602141", "level": "INFO", "module": "BackupManager", "message": "Initialisation du BackupManager", "metadata": {}}
-{"timestamp": "2025-05-26T22:20:14.734746", "level": "INFO", "module": "BackupManager", "message": "Sauvegarde cr\u00e9\u00e9e: /home/boggyman0/Desktop/projet/firewall-guardian/backups/backup_20250526_222014.json", "metadata": {"size": "1.46 KB", "items": 5}}
+{"timestamp": "2025-06-01T01:47:51.924078", "level": "INFO", "module": "BackupManager", "message": "Initialisation du BackupManager", "metadata": {}}
+{"timestamp": "2025-06-01T01:47:52.026198", "level": "INFO", "module": "BackupManager", "message": "Sauvegarde cr\u00e9\u00e9e: /home/hexhunter/monitorer_un_pare-feu/firewall-guardian/backups/backup_20250601_014752.json", "metadata": {"size": "1.44 KB", "items": 5}}
+{"timestamp": "2025-06-01T01:48:45.607271", "level": "INFO", "module": "BackupManager", "message": "Initialisation du BackupManager", "metadata": {}}
+{"timestamp": "2025-06-01T01:48:45.664557", "level": "INFO", "module": "BackupManager", "message": "Sauvegarde cr\u00e9\u00e9e: /home/hexhunter/monitorer_un_pare-feu/firewall-guardian/backups/backup_20250601_014845.json", "metadata": {"size": "1.52 KB", "items": 5}}
+{"timestamp": "2025-06-01T01:48:46.232749", "level": "INFO", "module": "BackupManager", "message": "Initialisation du BackupManager", "metadata": {}}
+{"timestamp": "2025-06-01T01:48:46.233856", "level": "INFO", "module": "BackupManager", "message": "Restauration de la sauvegarde: /home/hexhunter/monitorer_un_pare-feu/firewall-guardian/backups/backup_20250601_014845.json", "metadata": {}}
+{"timestamp": "2025-06-01T01:52:06.460996", "level": "INFO", "module": "BackupManager", "message": "Initialisation du BackupManager", "metadata": {}}
+{"timestamp": "2025-06-01T01:52:06.517441", "level": "INFO", "module": "BackupManager", "message": "Sauvegarde cr\u00e9\u00e9e: /home/hexhunter/monitorer_un_pare-feu/firewall-guardian/backups/backup_20250601_015206.json", "metadata": {"size": "1.63 KB", "items": 5}}
+{"timestamp": "2025-06-01T01:52:08.889614", "level": "INFO", "module": "BackupManager", "message": "Initialisation du BackupManager", "metadata": {}}
+{"timestamp": "2025-06-01T01:52:08.890462", "level": "INFO", "module": "BackupManager", "message": "Restauration de la sauvegarde: /home/hexhunter/monitorer_un_pare-feu/firewall-guardian/backups/backup_20250601_015206.json", "metadata": {}}
+{"timestamp": "2025-06-01T01:53:27.118493", "level": "INFO", "module": "BackupManager", "message": "Initialisation du BackupManager", "metadata": {}}
+{"timestamp": "2025-06-01T01:53:27.119265", "level": "INFO", "module": "BackupManager", "message": "Restauration de la sauvegarde: /home/hexhunter/monitorer_un_pare-feu/firewall-guardian/backups/backup_20250601_015206.json", "metadata": {}}
+{"timestamp": "2025-06-01T02:04:32.220988", "level": "INFO", "module": "BackupManager", "message": "Initialisation du BackupManager", "metadata": {}}
+{"timestamp": "2025-06-01T02:04:32.272077", "level": "INFO", "module": "BackupManager", "message": "Sauvegarde cr\u00e9\u00e9e: /home/hexhunter/monitorer_un_pare-feu/firewall-guardian/backups/backup_20250601_020432.json", "metadata": {"size": "1.56 KB", "items": 5}}
+{"timestamp": "2025-06-01T02:04:39.230216", "level": "INFO", "module": "BackupManager", "message": "Initialisation du BackupManager", "metadata": {}}
+{"timestamp": "2025-06-01T02:04:39.231088", "level": "INFO", "module": "BackupManager", "message": "Restauration de la sauvegarde: /home/hexhunter/monitorer_un_pare-feu/firewall-guardian/backups/backup_20250601_020432.json", "metadata": {}}

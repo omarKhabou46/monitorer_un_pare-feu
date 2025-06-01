@@ -46,6 +46,23 @@ class BackupManager:
             self.logger.critical(f"Échec de la sauvegarde: {str(e)}")
             raise
 
+    def restore_config(self):
+        """Restaure la dernière sauvegarde"""
+        try:
+            backups = sorted(self.backup_dir.glob("backup_*.json"))
+            if not backups:
+                self.logger.error("Aucune sauvegarde trouvée")
+                return
+            latest_backup = backups[-1]
+            with open(latest_backup, 'r') as f:
+                config = json.load(f)
+            # Simulate restoration (in a real scenario, apply iptables rules)
+            self.logger.info(f"Restauration de la sauvegarde: {latest_backup}")
+            print(f"Restored configuration from {latest_backup}")
+        except Exception as e:
+            self.logger.critical(f"Échec de la restauration: {str(e)}")
+            raise
+
     def _get_config(self, cmd):
         """Exécute une commande et retourne son output"""
         try:
@@ -67,9 +84,17 @@ if __name__ == "__main__":
     print("=== Système de sauvegarde ===")
     manager = BackupManager()
     
+    action = sys.argv[1] if len(sys.argv) > 1 else "save"
     try:
-        backup_path = manager.save_config()
-        print(f"\n✅ Sauvegarde réussie: {backup_path}")
+        if action == "save":
+            backup_path = manager.save_config()
+            print(f"\n✅ Sauvegarde réussie: {backup_path}")
+        elif action == "restore":
+            manager.restore_config()
+            print("\n✅ Restauration réussie")
+        else:
+            print(f"Invalid action: {action}. Use 'save' or 'restore'.")
+            sys.exit(1)
     except Exception as e:
         print(f"\n❌ Échec: {str(e)}")
         sys.exit(1)

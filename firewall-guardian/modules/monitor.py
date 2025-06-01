@@ -4,8 +4,11 @@ import time
 from pathlib import Path
 import sys
 
-# Configuration du path
-sys.path.append(str(Path(__file__).parent.parent))
+# Add project root to Python path
+project_root = Path(__file__).parent.parent
+if str(project_root) not in sys.path:
+    sys.path.insert(0, str(project_root))
+
 from lib.logger import Logger
 
 class FirewallMonitor:
@@ -20,7 +23,7 @@ class FirewallMonitor:
             5432: "PostgreSQL"
         }
 
-    def start(self):
+    def start_monitoring(self):
         """Lance la surveillance continue"""
         self.logger.info("Démarrage du monitoring (Ctrl+C pour arrêter)")
         
@@ -55,4 +58,4 @@ if __name__ == "__main__":
     print("\nAppuyez sur Ctrl+C pour arrêter\n")
     
     monitor = FirewallMonitor()
-    monitor.start()
+    monitor.start_monitoring()
